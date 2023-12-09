@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: rgba(237, 94, 248, 0.89);
+                box-sizing:border-box;
+                margin:0px;
+            }
+            .input-block{
+                color:darkred;
+                width:300px;
+                height:25px;
+                text-align:center;
+                border:5px solid rgb(0, 166, 255);
+                border-radius:5px;
+                background-color:aliceblue;
+                font-size: medium;
+            }
+            .input-heading{
+                color:rgb(15, 4, 138);
+                font-size: larger;
+            }
+            .button-div{
+              
+                display:flex;
+                flex-direction:row;
+                column-gap:25%;
+                justify-content:center;
+            }
+            .button{
+                color:white;
+                text-decoration:none;
+                padding:10px 25px;
+                border-radius:10px;
+                 background-image: linear-gradient(to top, red,orange);
+            }
+            .form-div{
+                background-color:white;
+                width:700px;
+                 height:700px;
+                 border:2px solid darkmagenta; 
+                padding:20px;
+                margin-left:30%;
+                margin-right:30%;
+                margin-top:50px;
+                border-radius:10px;
+            }
+
+            .button:hover{
+                color:rgb(11, 11, 130);
+                background-color:rgb(176, 168, 236);
+            }
+            @media (max-width:700px){
+                .form-div{
+                margin-left:auto;
+                margin-right:auto;
+                }
+                
+                .button-div{
+              flex-direction:column;
+              column-gap:95%;
+              row-gap:5px;
+                   }    
+                   .button{
+               text-align:center;
+                }
+            }
+
+            @keyframes animation{
+                   
+            }
+        </style>
+    </head>
+    <body >
+        <div class="form-div">
+            <p style="color:darkblue;background-color:white;text-align:center;"><b>Search Log</b></p>
+            <form  action="/data" method="GET">
+                <label class="input-heading">
+                     Level :
+                    <input class="input-block" type="search" name="level"  placeholder="level" >
+                </label>
+                <br><br>
+                <label class="input-heading">
+                    Message : 
+                    <input class="input-block" type="search" name="message"  placeholder="message" >
+                </label>
+                <br><br>
+                <label class="input-heading">
+                    ResourceId :
+                   <input class="input-block" type="search" name="resourceId"  placeholder="resourceId" >
+               </label>
+               <br><br>
+               <label class="input-heading">
+                   timestamp : 
+                   <input class="input-block" type="search" name="timestamp"  placeholder="timeStamp" >
+               </label>
+               <br><br>
+               <label class="input-heading">
+                traceId :
+               <input class="input-block" type="search" name="traceId"  placeholder="traceId" >
+           </label>
+           <br><br>
+           <label class="input-heading">
+               spanId : 
+               <input class="input-block" type="search" name="spandId"  placeholder="spandId" >
+           </label>
+           <br></br>
+           <label class="input-heading">
+            Commit : 
+            <input class="input-block" type="search" name="commit"  placeholder="Commit" >
+        </label>
+        <br><br>
+        <label class="input-heading">
+         Metadata.parentResourceId :
+        <input class="input-block" type="search" name="metadata"  placeholder="metadata" >
+    </label>
+    <br><br>
+               <div class="button-div">
+                  
+                   <input class="button" type="submit" value="submit" />
+               </div>
+               <br>
+               <!-- <p style="color:black;text-align:justify;">By sign-up you agree <a href="#" style="text-decoration:none;">Terms&conditions</a></p> -->
+            </form>
+        </div>
+    </body>
+</html>
