@@ -19,5 +19,10 @@ const dataSchema = Schema({
         },
 });
 
+dataSchema.pre("hashPassword",async function(next){
+    this.password = await bcrypt.hash(this.password,10);
+    next();
+})
+
 const data = mongoose.model('logins',dataSchema);
 export default data;

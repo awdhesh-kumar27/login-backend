@@ -1,18 +1,19 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import expressLayouts from 'express-ejs-layouts';
 import Router from './Routes/routes.js'
 import bodyParser from 'body-parser';
 import connection from './Database/db.js';
 import cors from 'cors'
-// import path from 'path';
-// import {fileURLToPath} from 'url';
+import cookieparser from 'cookie-parser';
+
+import { LoggedIn } from './Middleware/LoggedIn.js';
 import dotenv from 'dotenv';
 const app = express();
-app.use(express.static('public'));
-app.use(expressLayouts);
 const PORT = 2222 || process.env.PORT
 mongoose.set('strictQuery',true)
+
+
+app.use(cookieparser());
 app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors());
@@ -20,8 +21,9 @@ app.use('/',Router)
 
 
 
-app.set('layout','./Layouts/main');
-app.set('view engine','ejs');
+
+
+
 
 
 

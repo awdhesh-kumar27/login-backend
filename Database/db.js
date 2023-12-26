@@ -9,7 +9,7 @@ dotenv.config()
 // mongodb+srv://awdheshkumarab98:<password>@cluster0.1q7jf7k.mongodb.net/
 export const connection =async()=>{
     const URL = process.env.URL;
-     console.log(URL);
+    //  console.log(URL);
     try{
         await mongoose.connect(URL,{useNewUrlParser:true}) 
         console.log("Database connected successfully");
